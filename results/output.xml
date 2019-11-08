@@ -1,0 +1,3499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0.4 (Python 3.6.1 on win32)" generated="20181217 17:21:29.827">
+<suite id="s1" name="autoTest" source="E:\other\autoTest">
+<suite id="s1-s1" name="OSP-addFieldPAD" source="E:\other\autoTest\OSP-addFieldPAD.robot">
+<test id="s1-s1-t1" name="ReadyCSV">
+<kw name="ReadCSVFile" library="resource">
+<arguments>
+<arg>&amp;{path}</arg>
+</arguments>
+<kw name="Ready Csv" library="readycsv">
+<arguments>
+<arg>e://OSPFILE//Pad//adcInputOSP1.csv</arg>
+</arguments>
+<assign>
+<var>&amp;{dict}</var>
+</assign>
+<msg timestamp="20181217 17:21:30.552" level="INFO">ServerName
+ADC-NAS-AU1
+ADC-NAS-CN1
+ADC-NAS-KR1
+ADC-NAS-MMEA
+ADC-NAS-TW1
+ADC-NAVDB1
+ADC-NAVDB2
+ADC-NAVDB3
+ADC-NAVSTGDB3
+ADC-PPLSFTAPP
+ADC-PPLSFTAPP2
+ADC-PPLSFTAPP3
+ADC-PPLSFTWEB2
+ADC-PPLSFTWEB3
+ADC-RDS-MMEA
+ADC-RDS-NAV-AU3
+ADC-RDS-NAV-KR1
+ADC-RDS-NAV-KR2
+ADC-RDS-NAV-TW1
+ADC-RDS-NAV-TW2
+ADC-RDS-NAV-TW4
+ADC-RDS-NAV-TWS
+ADC-VMGCCUDB
+ADC-VMGCCWEB1
+ADC-VMGCCWEB2
+ADC-VMGCCWEB3
+ADC-VMGCCWEB4
+ADC-VMXBLD
+ADC-VMXDB1
+ADC-VMXSBLD
+ADC-VMXSDB1</msg>
+<msg timestamp="20181217 17:21:30.553" level="INFO">&amp;{dict} = { ADC-NAS-AU1=2019/6/30 | ADC-NAS-CN1=2019/6/30 | ADC-NAS-KR1=2019/6/30 | ADC-NAS-MMEA=2019/6/30 | ADC-NAS-TW1=2019/6/30 | ADC-NAVDB1=2019/9/30 | ADC-NAVDB2=2019/9/30 | ADC-NAVDB3=2019/3/31 | ADC-NAVS...</msg>
+<status status="PASS" starttime="20181217 17:21:30.551" endtime="20181217 17:21:30.553"></status>
+</kw>
+<kw name="OpenOSPToVMlist" library="resource">
+<arguments>
+<arg>&amp;{path}</arg>
+</arguments>
+<kw name="Open Browser To Login Page" library="resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${OSPURL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20181217 17:21:30.555" level="INFO">Opening browser 'Chrome' to base url 'https://osp.trendmicro.com/OSP/login/login.html'.</msg>
+<status status="PASS" starttime="20181217 17:21:30.554" endtime="20181217 17:21:35.651"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20181217 17:21:35.651" endtime="20181217 17:21:36.795"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:21:36.795" endtime="20181217 17:21:36.796"></status>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals ``title``.</doc>
+<arguments>
+<arg>OSP | Login</arg>
+</arguments>
+<msg timestamp="20181217 17:21:36.805" level="INFO">Page title is 'OSP | Login'.</msg>
+<status status="PASS" starttime="20181217 17:21:36.796" endtime="20181217 17:21:36.806"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:21:36.796" endtime="20181217 17:21:36.806"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:21:30.554" endtime="20181217 17:21:36.806"></status>
+</kw>
+<kw name="Default UserName And Password" library="resource">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>.........</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:21:36.807" endtime="20181217 17:21:36.808"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='username']</arg>
+<arg>${USERNAME}</arg>
+</arguments>
+<msg timestamp="20181217 17:21:36.809" level="INFO">Typing text 'trend\beyondsoft_danielw' into text field 'xpath=//*[@name='username']'.</msg>
+<status status="PASS" starttime="20181217 17:21:36.808" endtime="20181217 17:21:37.192"></status>
+</kw>
+<kw name="Decrypt Oralce" library="decrypt">
+<arguments>
+<arg>${PASSWORD}</arg>
+</arguments>
+<assign>
+<var>${DECRYPT}</var>
+</assign>
+<msg timestamp="20181217 17:21:37.201" level="INFO">${DECRYPT} = HelloWorld!23</msg>
+<status status="PASS" starttime="20181217 17:21:37.193" endtime="20181217 17:21:37.201"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='password']</arg>
+<arg>${DECRYPT}</arg>
+</arguments>
+<msg timestamp="20181217 17:21:37.201" level="INFO">Typing text 'HelloWorld!23' into text field 'xpath=//*[@name='password']'.</msg>
+<status status="PASS" starttime="20181217 17:21:37.201" endtime="20181217 17:21:37.471"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:21:36.807" endtime="20181217 17:21:37.471"></status>
+</kw>
+<kw name="Submit Credentials" library="resource">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@type='submit']</arg>
+</arguments>
+<msg timestamp="20181217 17:21:37.472" level="INFO">Clicking button 'xpath=//*[@type='submit']'.</msg>
+<status status="PASS" starttime="20181217 17:21:37.472" endtime="20181217 17:21:41.917"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:21:37.471" endtime="20181217 17:21:41.917"></status>
+</kw>
+<kw name="Click Feature Step" library="resource">
+<arguments>
+<arg>&amp;{path}</arg>
+</arguments>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>--------</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:21:41.919" endtime="20181217 17:21:41.919"></status>
+</kw>
+<kw name="${item} IN [ @{kwargs.values()} ]" type="for">
+<kw name="${item} = Inventory" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20181217 17:21:43.925" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20181217 17:21:41.922" endtime="20181217 17:21:43.925"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[text()='${item}']</arg>
+</arguments>
+<msg timestamp="20181217 17:21:43.926" level="INFO">Clicking element 'xpath=//*[text()='Inventory']'.</msg>
+<status status="PASS" starttime="20181217 17:21:43.925" endtime="20181217 17:21:44.168"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${item}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:21:44.168" endtime="20181217 17:21:44.168"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:21:41.922" endtime="20181217 17:21:44.168"></status>
+</kw>
+<kw name="${item} = All VM List" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20181217 17:21:46.169" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20181217 17:21:44.169" endtime="20181217 17:21:46.169"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[text()='${item}']</arg>
+</arguments>
+<msg timestamp="20181217 17:21:46.170" level="INFO">Clicking element 'xpath=//*[text()='All VM List']'.</msg>
+<status status="PASS" starttime="20181217 17:21:46.169" endtime="20181217 17:21:49.139"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${item}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:21:49.140" endtime="20181217 17:21:49.141"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:21:44.169" endtime="20181217 17:21:49.141"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:21:41.919" endtime="20181217 17:21:49.141"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:21:41.918" endtime="20181217 17:21:49.141"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:21:30.553" endtime="20181217 17:21:49.142"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>---get csv----</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:21:49.142" endtime="20181217 17:21:49.142"></status>
+</kw>
+<kw name="${s} IN [ @{dict.items()} ]" type="for">
+<kw name="${s} = ('ADC-NAS-AU1', '2019/6/30')" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s[0]}----${s[1]}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:21:49.143" endtime="20181217 17:21:49.145"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:21:53.146" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:21:49.145" endtime="20181217 17:21:53.146"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//input[@placeholder='Search']</arg>
+<arg>${s[0]}</arg>
+</arguments>
+<msg timestamp="20181217 17:21:53.147" level="INFO">Typing text 'ADC-NAS-AU1' into text field 'xpath=//input[@placeholder='Search']'.</msg>
+<status status="PASS" starttime="20181217 17:21:53.146" endtime="20181217 17:21:53.527"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:21:57.528" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:21:53.527" endtime="20181217 17:21:57.528"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//tr[@data-index='0']//a[@title='edit']</arg>
+</arguments>
+<msg timestamp="20181217 17:21:57.529" level="INFO">Clicking element 'xpath=//tr[@data-index='0']//a[@title='edit']'.</msg>
+<status status="PASS" starttime="20181217 17:21:57.528" endtime="20181217 17:21:57.665"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:22:01.665" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:21:57.665" endtime="20181217 17:22:01.665"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+</arguments>
+<assign>
+<var>${ospld}</var>
+</assign>
+<msg timestamp="20181217 17:22:01.737" level="INFO">${ospld} = </msg>
+<status status="PASS" starttime="20181217 17:22:01.665" endtime="20181217 17:22:01.737"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:22:01.738" endtime="20181217 17:22:01.738"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+<arg>${s[1]}</arg>
+</arguments>
+<msg timestamp="20181217 17:22:01.739" level="INFO">Typing text '2019/6/30' into text field 'xpath=//*[@name='osPlanned']'.</msg>
+<status status="PASS" starttime="20181217 17:22:01.738" endtime="20181217 17:22:02.150"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id='saveButton']</arg>
+</arguments>
+<msg timestamp="20181217 17:22:02.151" level="INFO">Clicking button 'xpath=//*[@id='saveButton']'.</msg>
+<status status="PASS" starttime="20181217 17:22:02.150" endtime="20181217 17:22:02.399"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:22:06.401" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:22:02.400" endtime="20181217 17:22:06.401"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@class='bootstrap-dialog-message']</arg>
+</arguments>
+<assign>
+<var>${msg}</var>
+</assign>
+<msg timestamp="20181217 17:22:06.477" level="INFO">${msg} = VM Saved</msg>
+<status status="PASS" starttime="20181217 17:22:06.401" endtime="20181217 17:22:06.478"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${msg}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:22:06.478" endtime="20181217 17:22:06.478"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:22:06.479" endtime="20181217 17:22:06.479"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${msg}'=='VM Saved'</arg>
+<arg>write csv</arg>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<kw name="Write Csv" library="readycsv">
+<arguments>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:22:06.480" endtime="20181217 17:22:06.482"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:22:06.480" endtime="20181217 17:22:06.482"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[text()='×']</arg>
+</arguments>
+<msg timestamp="20181217 17:22:06.482" level="INFO">Clicking button 'xpath=//*[text()='×']'.</msg>
+<status status="PASS" starttime="20181217 17:22:06.482" endtime="20181217 17:22:06.747"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:21:49.143" endtime="20181217 17:22:06.747"></status>
+</kw>
+<kw name="${s} = ('ADC-NAS-CN1', '2019/6/30')" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s[0]}----${s[1]}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:22:06.748" endtime="20181217 17:22:06.749"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:22:10.751" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:22:06.749" endtime="20181217 17:22:10.751"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//input[@placeholder='Search']</arg>
+<arg>${s[0]}</arg>
+</arguments>
+<msg timestamp="20181217 17:22:10.752" level="INFO">Typing text 'ADC-NAS-CN1' into text field 'xpath=//input[@placeholder='Search']'.</msg>
+<status status="PASS" starttime="20181217 17:22:10.751" endtime="20181217 17:22:11.019"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:22:15.021" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:22:11.020" endtime="20181217 17:22:15.021"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//tr[@data-index='0']//a[@title='edit']</arg>
+</arguments>
+<msg timestamp="20181217 17:22:15.022" level="INFO">Clicking element 'xpath=//tr[@data-index='0']//a[@title='edit']'.</msg>
+<status status="PASS" starttime="20181217 17:22:15.021" endtime="20181217 17:22:15.141"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:22:19.142" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:22:15.141" endtime="20181217 17:22:19.142"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+</arguments>
+<assign>
+<var>${ospld}</var>
+</assign>
+<msg timestamp="20181217 17:22:19.197" level="INFO">${ospld} = </msg>
+<status status="PASS" starttime="20181217 17:22:19.143" endtime="20181217 17:22:19.198"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:22:19.198" endtime="20181217 17:22:19.199"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+<arg>${s[1]}</arg>
+</arguments>
+<msg timestamp="20181217 17:22:19.199" level="INFO">Typing text '2019/6/30' into text field 'xpath=//*[@name='osPlanned']'.</msg>
+<status status="PASS" starttime="20181217 17:22:19.199" endtime="20181217 17:22:19.604"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id='saveButton']</arg>
+</arguments>
+<msg timestamp="20181217 17:22:19.605" level="INFO">Clicking button 'xpath=//*[@id='saveButton']'.</msg>
+<status status="PASS" starttime="20181217 17:22:19.605" endtime="20181217 17:22:19.791"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:22:23.793" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:22:19.792" endtime="20181217 17:22:23.793"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@class='bootstrap-dialog-message']</arg>
+</arguments>
+<assign>
+<var>${msg}</var>
+</assign>
+<msg timestamp="20181217 17:22:23.853" level="INFO">${msg} = VM Saved</msg>
+<status status="PASS" starttime="20181217 17:22:23.793" endtime="20181217 17:22:23.853"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${msg}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:22:23.853" endtime="20181217 17:22:23.854"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:22:23.854" endtime="20181217 17:22:23.855"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${msg}'=='VM Saved'</arg>
+<arg>write csv</arg>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<kw name="Write Csv" library="readycsv">
+<arguments>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:22:23.856" endtime="20181217 17:22:23.857"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:22:23.855" endtime="20181217 17:22:23.857"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[text()='×']</arg>
+</arguments>
+<msg timestamp="20181217 17:22:23.858" level="INFO">Clicking button 'xpath=//*[text()='×']'.</msg>
+<status status="PASS" starttime="20181217 17:22:23.857" endtime="20181217 17:22:24.101"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:22:06.748" endtime="20181217 17:22:24.101"></status>
+</kw>
+<kw name="${s} = ('ADC-NAS-KR1', '2019/6/30')" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s[0]}----${s[1]}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:22:24.102" endtime="20181217 17:22:24.103"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:22:28.105" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:22:24.103" endtime="20181217 17:22:28.105"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//input[@placeholder='Search']</arg>
+<arg>${s[0]}</arg>
+</arguments>
+<msg timestamp="20181217 17:22:28.106" level="INFO">Typing text 'ADC-NAS-KR1' into text field 'xpath=//input[@placeholder='Search']'.</msg>
+<status status="PASS" starttime="20181217 17:22:28.105" endtime="20181217 17:22:28.331"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:22:32.332" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:22:28.331" endtime="20181217 17:22:32.332"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//tr[@data-index='0']//a[@title='edit']</arg>
+</arguments>
+<msg timestamp="20181217 17:22:32.333" level="INFO">Clicking element 'xpath=//tr[@data-index='0']//a[@title='edit']'.</msg>
+<status status="PASS" starttime="20181217 17:22:32.332" endtime="20181217 17:22:32.450"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:22:36.451" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:22:32.450" endtime="20181217 17:22:36.451"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+</arguments>
+<assign>
+<var>${ospld}</var>
+</assign>
+<msg timestamp="20181217 17:22:36.506" level="INFO">${ospld} = </msg>
+<status status="PASS" starttime="20181217 17:22:36.451" endtime="20181217 17:22:36.506"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:22:36.506" endtime="20181217 17:22:36.507"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+<arg>${s[1]}</arg>
+</arguments>
+<msg timestamp="20181217 17:22:36.508" level="INFO">Typing text '2019/6/30' into text field 'xpath=//*[@name='osPlanned']'.</msg>
+<status status="PASS" starttime="20181217 17:22:36.507" endtime="20181217 17:22:36.921"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id='saveButton']</arg>
+</arguments>
+<msg timestamp="20181217 17:22:36.922" level="INFO">Clicking button 'xpath=//*[@id='saveButton']'.</msg>
+<status status="PASS" starttime="20181217 17:22:36.922" endtime="20181217 17:22:37.136"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:22:41.137" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:22:37.136" endtime="20181217 17:22:41.137"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@class='bootstrap-dialog-message']</arg>
+</arguments>
+<assign>
+<var>${msg}</var>
+</assign>
+<msg timestamp="20181217 17:22:41.194" level="INFO">${msg} = VM Saved</msg>
+<status status="PASS" starttime="20181217 17:22:41.137" endtime="20181217 17:22:41.194"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${msg}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:22:41.195" endtime="20181217 17:22:41.195"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:22:41.195" endtime="20181217 17:22:41.196"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${msg}'=='VM Saved'</arg>
+<arg>write csv</arg>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<kw name="Write Csv" library="readycsv">
+<arguments>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:22:41.197" endtime="20181217 17:22:41.198"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:22:41.196" endtime="20181217 17:22:41.198"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[text()='×']</arg>
+</arguments>
+<msg timestamp="20181217 17:22:41.199" level="INFO">Clicking button 'xpath=//*[text()='×']'.</msg>
+<status status="PASS" starttime="20181217 17:22:41.199" endtime="20181217 17:22:41.503"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:22:24.102" endtime="20181217 17:22:41.503"></status>
+</kw>
+<kw name="${s} = ('ADC-NAS-MMEA', '2019/6/30')" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s[0]}----${s[1]}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:22:41.503" endtime="20181217 17:22:41.504"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:22:45.507" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:22:41.505" endtime="20181217 17:22:45.507"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//input[@placeholder='Search']</arg>
+<arg>${s[0]}</arg>
+</arguments>
+<msg timestamp="20181217 17:22:45.508" level="INFO">Typing text 'ADC-NAS-MMEA' into text field 'xpath=//input[@placeholder='Search']'.</msg>
+<status status="PASS" starttime="20181217 17:22:45.507" endtime="20181217 17:22:45.801"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:22:49.802" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:22:45.802" endtime="20181217 17:22:49.802"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//tr[@data-index='0']//a[@title='edit']</arg>
+</arguments>
+<msg timestamp="20181217 17:22:49.803" level="INFO">Clicking element 'xpath=//tr[@data-index='0']//a[@title='edit']'.</msg>
+<status status="PASS" starttime="20181217 17:22:49.802" endtime="20181217 17:22:49.920"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:22:53.921" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:22:49.920" endtime="20181217 17:22:53.921"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+</arguments>
+<assign>
+<var>${ospld}</var>
+</assign>
+<msg timestamp="20181217 17:22:53.975" level="INFO">${ospld} = </msg>
+<status status="PASS" starttime="20181217 17:22:53.921" endtime="20181217 17:22:53.976"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:22:53.976" endtime="20181217 17:22:53.976"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+<arg>${s[1]}</arg>
+</arguments>
+<msg timestamp="20181217 17:22:53.977" level="INFO">Typing text '2019/6/30' into text field 'xpath=//*[@name='osPlanned']'.</msg>
+<status status="PASS" starttime="20181217 17:22:53.977" endtime="20181217 17:22:54.378"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id='saveButton']</arg>
+</arguments>
+<msg timestamp="20181217 17:22:54.378" level="INFO">Clicking button 'xpath=//*[@id='saveButton']'.</msg>
+<status status="PASS" starttime="20181217 17:22:54.378" endtime="20181217 17:22:54.593"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:22:58.593" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:22:54.593" endtime="20181217 17:22:58.593"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@class='bootstrap-dialog-message']</arg>
+</arguments>
+<assign>
+<var>${msg}</var>
+</assign>
+<msg timestamp="20181217 17:22:58.659" level="INFO">${msg} = VM Saved</msg>
+<status status="PASS" starttime="20181217 17:22:58.593" endtime="20181217 17:22:58.659"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${msg}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:22:58.660" endtime="20181217 17:22:58.660"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:22:58.660" endtime="20181217 17:22:58.661"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${msg}'=='VM Saved'</arg>
+<arg>write csv</arg>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<kw name="Write Csv" library="readycsv">
+<arguments>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:22:58.662" endtime="20181217 17:22:58.663"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:22:58.661" endtime="20181217 17:22:58.663"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[text()='×']</arg>
+</arguments>
+<msg timestamp="20181217 17:22:58.664" level="INFO">Clicking button 'xpath=//*[text()='×']'.</msg>
+<status status="PASS" starttime="20181217 17:22:58.663" endtime="20181217 17:22:58.887"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:22:41.503" endtime="20181217 17:22:58.887"></status>
+</kw>
+<kw name="${s} = ('ADC-NAS-TW1', '2019/6/30')" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s[0]}----${s[1]}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:22:58.888" endtime="20181217 17:22:58.888"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:23:02.889" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:22:58.889" endtime="20181217 17:23:02.889"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//input[@placeholder='Search']</arg>
+<arg>${s[0]}</arg>
+</arguments>
+<msg timestamp="20181217 17:23:02.890" level="INFO">Typing text 'ADC-NAS-TW1' into text field 'xpath=//input[@placeholder='Search']'.</msg>
+<status status="PASS" starttime="20181217 17:23:02.889" endtime="20181217 17:23:03.130"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:23:07.131" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:23:03.131" endtime="20181217 17:23:07.131"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//tr[@data-index='0']//a[@title='edit']</arg>
+</arguments>
+<msg timestamp="20181217 17:23:07.132" level="INFO">Clicking element 'xpath=//tr[@data-index='0']//a[@title='edit']'.</msg>
+<status status="PASS" starttime="20181217 17:23:07.131" endtime="20181217 17:23:07.262"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:23:11.263" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:23:07.263" endtime="20181217 17:23:11.263"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+</arguments>
+<assign>
+<var>${ospld}</var>
+</assign>
+<msg timestamp="20181217 17:23:11.343" level="INFO">${ospld} = </msg>
+<status status="PASS" starttime="20181217 17:23:11.263" endtime="20181217 17:23:11.343"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:23:11.344" endtime="20181217 17:23:11.344"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+<arg>${s[1]}</arg>
+</arguments>
+<msg timestamp="20181217 17:23:11.345" level="INFO">Typing text '2019/6/30' into text field 'xpath=//*[@name='osPlanned']'.</msg>
+<status status="PASS" starttime="20181217 17:23:11.345" endtime="20181217 17:23:11.784"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id='saveButton']</arg>
+</arguments>
+<msg timestamp="20181217 17:23:11.785" level="INFO">Clicking button 'xpath=//*[@id='saveButton']'.</msg>
+<status status="PASS" starttime="20181217 17:23:11.784" endtime="20181217 17:23:11.991"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:23:15.993" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:23:11.991" endtime="20181217 17:23:15.993"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@class='bootstrap-dialog-message']</arg>
+</arguments>
+<assign>
+<var>${msg}</var>
+</assign>
+<msg timestamp="20181217 17:23:16.058" level="INFO">${msg} = VM Saved</msg>
+<status status="PASS" starttime="20181217 17:23:15.993" endtime="20181217 17:23:16.058"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${msg}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:23:16.058" endtime="20181217 17:23:16.059"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:23:16.059" endtime="20181217 17:23:16.059"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${msg}'=='VM Saved'</arg>
+<arg>write csv</arg>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<kw name="Write Csv" library="readycsv">
+<arguments>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:23:16.061" endtime="20181217 17:23:16.062"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:23:16.060" endtime="20181217 17:23:16.062"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[text()='×']</arg>
+</arguments>
+<msg timestamp="20181217 17:23:16.062" level="INFO">Clicking button 'xpath=//*[text()='×']'.</msg>
+<status status="PASS" starttime="20181217 17:23:16.062" endtime="20181217 17:23:16.349"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:22:58.887" endtime="20181217 17:23:16.349"></status>
+</kw>
+<kw name="${s} = ('ADC-NAVDB1', '2019/9/30')" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s[0]}----${s[1]}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:23:16.350" endtime="20181217 17:23:16.351"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:23:20.352" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:23:16.351" endtime="20181217 17:23:20.352"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//input[@placeholder='Search']</arg>
+<arg>${s[0]}</arg>
+</arguments>
+<msg timestamp="20181217 17:23:20.353" level="INFO">Typing text 'ADC-NAVDB1' into text field 'xpath=//input[@placeholder='Search']'.</msg>
+<status status="PASS" starttime="20181217 17:23:20.352" endtime="20181217 17:23:20.582"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:23:24.584" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:23:20.582" endtime="20181217 17:23:24.584"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//tr[@data-index='0']//a[@title='edit']</arg>
+</arguments>
+<msg timestamp="20181217 17:23:24.585" level="INFO">Clicking element 'xpath=//tr[@data-index='0']//a[@title='edit']'.</msg>
+<status status="PASS" starttime="20181217 17:23:24.584" endtime="20181217 17:23:24.704"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:23:28.714" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:23:24.704" endtime="20181217 17:23:28.714"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+</arguments>
+<assign>
+<var>${ospld}</var>
+</assign>
+<msg timestamp="20181217 17:23:28.787" level="INFO">${ospld} = </msg>
+<status status="PASS" starttime="20181217 17:23:28.714" endtime="20181217 17:23:28.787"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:23:28.787" endtime="20181217 17:23:28.787"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+<arg>${s[1]}</arg>
+</arguments>
+<msg timestamp="20181217 17:23:28.787" level="INFO">Typing text '2019/9/30' into text field 'xpath=//*[@name='osPlanned']'.</msg>
+<status status="PASS" starttime="20181217 17:23:28.787" endtime="20181217 17:23:29.167"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id='saveButton']</arg>
+</arguments>
+<msg timestamp="20181217 17:23:29.168" level="INFO">Clicking button 'xpath=//*[@id='saveButton']'.</msg>
+<status status="PASS" starttime="20181217 17:23:29.168" endtime="20181217 17:23:29.436"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:23:33.439" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:23:29.437" endtime="20181217 17:23:33.439"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@class='bootstrap-dialog-message']</arg>
+</arguments>
+<assign>
+<var>${msg}</var>
+</assign>
+<msg timestamp="20181217 17:23:33.523" level="INFO">${msg} = VM Saved</msg>
+<status status="PASS" starttime="20181217 17:23:33.439" endtime="20181217 17:23:33.523"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${msg}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:23:33.524" endtime="20181217 17:23:33.524"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:23:33.525" endtime="20181217 17:23:33.525"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${msg}'=='VM Saved'</arg>
+<arg>write csv</arg>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<kw name="Write Csv" library="readycsv">
+<arguments>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:23:33.526" endtime="20181217 17:23:33.527"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:23:33.525" endtime="20181217 17:23:33.527"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[text()='×']</arg>
+</arguments>
+<msg timestamp="20181217 17:23:33.528" level="INFO">Clicking button 'xpath=//*[text()='×']'.</msg>
+<status status="PASS" starttime="20181217 17:23:33.528" endtime="20181217 17:23:33.771"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:23:16.349" endtime="20181217 17:23:33.771"></status>
+</kw>
+<kw name="${s} = ('ADC-NAVDB2', '2019/9/30')" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s[0]}----${s[1]}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:23:33.772" endtime="20181217 17:23:33.773"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:23:37.773" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:23:33.773" endtime="20181217 17:23:37.773"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//input[@placeholder='Search']</arg>
+<arg>${s[0]}</arg>
+</arguments>
+<msg timestamp="20181217 17:23:37.774" level="INFO">Typing text 'ADC-NAVDB2' into text field 'xpath=//input[@placeholder='Search']'.</msg>
+<status status="PASS" starttime="20181217 17:23:37.773" endtime="20181217 17:23:37.989"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:23:41.990" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:23:37.989" endtime="20181217 17:23:41.990"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//tr[@data-index='0']//a[@title='edit']</arg>
+</arguments>
+<msg timestamp="20181217 17:23:41.991" level="INFO">Clicking element 'xpath=//tr[@data-index='0']//a[@title='edit']'.</msg>
+<status status="PASS" starttime="20181217 17:23:41.990" endtime="20181217 17:23:42.117"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:23:46.118" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:23:42.117" endtime="20181217 17:23:46.118"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+</arguments>
+<assign>
+<var>${ospld}</var>
+</assign>
+<msg timestamp="20181217 17:23:46.173" level="INFO">${ospld} = </msg>
+<status status="PASS" starttime="20181217 17:23:46.118" endtime="20181217 17:23:46.173"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:23:46.173" endtime="20181217 17:23:46.174"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+<arg>${s[1]}</arg>
+</arguments>
+<msg timestamp="20181217 17:23:46.175" level="INFO">Typing text '2019/9/30' into text field 'xpath=//*[@name='osPlanned']'.</msg>
+<status status="PASS" starttime="20181217 17:23:46.174" endtime="20181217 17:23:46.571"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id='saveButton']</arg>
+</arguments>
+<msg timestamp="20181217 17:23:46.572" level="INFO">Clicking button 'xpath=//*[@id='saveButton']'.</msg>
+<status status="PASS" starttime="20181217 17:23:46.572" endtime="20181217 17:23:46.765"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:23:50.766" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:23:46.766" endtime="20181217 17:23:50.766"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@class='bootstrap-dialog-message']</arg>
+</arguments>
+<assign>
+<var>${msg}</var>
+</assign>
+<msg timestamp="20181217 17:23:50.829" level="INFO">${msg} = VM Saved</msg>
+<status status="PASS" starttime="20181217 17:23:50.767" endtime="20181217 17:23:50.829"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${msg}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:23:50.829" endtime="20181217 17:23:50.830"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:23:50.830" endtime="20181217 17:23:50.831"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${msg}'=='VM Saved'</arg>
+<arg>write csv</arg>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<kw name="Write Csv" library="readycsv">
+<arguments>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:23:50.832" endtime="20181217 17:23:50.833"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:23:50.831" endtime="20181217 17:23:50.833"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[text()='×']</arg>
+</arguments>
+<msg timestamp="20181217 17:23:50.834" level="INFO">Clicking button 'xpath=//*[text()='×']'.</msg>
+<status status="PASS" starttime="20181217 17:23:50.833" endtime="20181217 17:23:51.095"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:23:33.771" endtime="20181217 17:23:51.095"></status>
+</kw>
+<kw name="${s} = ('ADC-NAVDB3', '2019/3/31')" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s[0]}----${s[1]}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:23:51.096" endtime="20181217 17:23:51.097"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:23:55.099" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:23:51.097" endtime="20181217 17:23:55.099"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//input[@placeholder='Search']</arg>
+<arg>${s[0]}</arg>
+</arguments>
+<msg timestamp="20181217 17:23:55.100" level="INFO">Typing text 'ADC-NAVDB3' into text field 'xpath=//input[@placeholder='Search']'.</msg>
+<status status="PASS" starttime="20181217 17:23:55.099" endtime="20181217 17:23:55.341"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:23:59.343" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:23:55.342" endtime="20181217 17:23:59.343"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//tr[@data-index='0']//a[@title='edit']</arg>
+</arguments>
+<msg timestamp="20181217 17:23:59.344" level="INFO">Clicking element 'xpath=//tr[@data-index='0']//a[@title='edit']'.</msg>
+<status status="PASS" starttime="20181217 17:23:59.343" endtime="20181217 17:23:59.470"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:24:03.473" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:23:59.470" endtime="20181217 17:24:03.473"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+</arguments>
+<assign>
+<var>${ospld}</var>
+</assign>
+<msg timestamp="20181217 17:24:03.528" level="INFO">${ospld} = </msg>
+<status status="PASS" starttime="20181217 17:24:03.473" endtime="20181217 17:24:03.528"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:24:03.528" endtime="20181217 17:24:03.529"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+<arg>${s[1]}</arg>
+</arguments>
+<msg timestamp="20181217 17:24:03.530" level="INFO">Typing text '2019/3/31' into text field 'xpath=//*[@name='osPlanned']'.</msg>
+<status status="PASS" starttime="20181217 17:24:03.529" endtime="20181217 17:24:03.930"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id='saveButton']</arg>
+</arguments>
+<msg timestamp="20181217 17:24:03.931" level="INFO">Clicking button 'xpath=//*[@id='saveButton']'.</msg>
+<status status="PASS" starttime="20181217 17:24:03.931" endtime="20181217 17:24:04.130"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:24:08.132" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:24:04.131" endtime="20181217 17:24:08.132"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@class='bootstrap-dialog-message']</arg>
+</arguments>
+<assign>
+<var>${msg}</var>
+</assign>
+<msg timestamp="20181217 17:24:08.191" level="INFO">${msg} = VM Saved</msg>
+<status status="PASS" starttime="20181217 17:24:08.132" endtime="20181217 17:24:08.191"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${msg}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:24:08.192" endtime="20181217 17:24:08.192"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:24:08.192" endtime="20181217 17:24:08.193"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${msg}'=='VM Saved'</arg>
+<arg>write csv</arg>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<kw name="Write Csv" library="readycsv">
+<arguments>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:24:08.194" endtime="20181217 17:24:08.195"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:24:08.193" endtime="20181217 17:24:08.195"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[text()='×']</arg>
+</arguments>
+<msg timestamp="20181217 17:24:08.196" level="INFO">Clicking button 'xpath=//*[text()='×']'.</msg>
+<status status="PASS" starttime="20181217 17:24:08.195" endtime="20181217 17:24:08.422"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:23:51.095" endtime="20181217 17:24:08.422"></status>
+</kw>
+<kw name="${s} = ('ADC-NAVSTGDB3', '2019/3/31')" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s[0]}----${s[1]}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:24:08.422" endtime="20181217 17:24:08.423"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:24:12.425" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:24:08.424" endtime="20181217 17:24:12.425"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//input[@placeholder='Search']</arg>
+<arg>${s[0]}</arg>
+</arguments>
+<msg timestamp="20181217 17:24:12.426" level="INFO">Typing text 'ADC-NAVSTGDB3' into text field 'xpath=//input[@placeholder='Search']'.</msg>
+<status status="PASS" starttime="20181217 17:24:12.425" endtime="20181217 17:24:12.691"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:24:16.692" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:24:12.692" endtime="20181217 17:24:16.692"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//tr[@data-index='0']//a[@title='edit']</arg>
+</arguments>
+<msg timestamp="20181217 17:24:16.693" level="INFO">Clicking element 'xpath=//tr[@data-index='0']//a[@title='edit']'.</msg>
+<status status="PASS" starttime="20181217 17:24:16.692" endtime="20181217 17:24:16.812"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:24:20.813" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:24:16.812" endtime="20181217 17:24:20.813"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+</arguments>
+<assign>
+<var>${ospld}</var>
+</assign>
+<msg timestamp="20181217 17:24:20.876" level="INFO">${ospld} = </msg>
+<status status="PASS" starttime="20181217 17:24:20.814" endtime="20181217 17:24:20.876"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:24:20.877" endtime="20181217 17:24:20.877"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+<arg>${s[1]}</arg>
+</arguments>
+<msg timestamp="20181217 17:24:20.878" level="INFO">Typing text '2019/3/31' into text field 'xpath=//*[@name='osPlanned']'.</msg>
+<status status="PASS" starttime="20181217 17:24:20.877" endtime="20181217 17:24:21.351"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id='saveButton']</arg>
+</arguments>
+<msg timestamp="20181217 17:24:21.351" level="INFO">Clicking button 'xpath=//*[@id='saveButton']'.</msg>
+<status status="PASS" starttime="20181217 17:24:21.351" endtime="20181217 17:24:21.634"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:24:25.635" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:24:21.634" endtime="20181217 17:24:25.635"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@class='bootstrap-dialog-message']</arg>
+</arguments>
+<assign>
+<var>${msg}</var>
+</assign>
+<msg timestamp="20181217 17:24:25.693" level="INFO">${msg} = VM Saved</msg>
+<status status="PASS" starttime="20181217 17:24:25.635" endtime="20181217 17:24:25.693"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${msg}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:24:25.693" endtime="20181217 17:24:25.694"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:24:25.694" endtime="20181217 17:24:25.695"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${msg}'=='VM Saved'</arg>
+<arg>write csv</arg>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<kw name="Write Csv" library="readycsv">
+<arguments>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:24:25.696" endtime="20181217 17:24:25.697"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:24:25.695" endtime="20181217 17:24:25.697"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[text()='×']</arg>
+</arguments>
+<msg timestamp="20181217 17:24:25.698" level="INFO">Clicking button 'xpath=//*[text()='×']'.</msg>
+<status status="PASS" starttime="20181217 17:24:25.697" endtime="20181217 17:24:25.923"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:24:08.422" endtime="20181217 17:24:25.924"></status>
+</kw>
+<kw name="${s} = ('ADC-PPLSFTAPP', '2019/12/31')" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s[0]}----${s[1]}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:24:25.924" endtime="20181217 17:24:25.925"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:24:29.942" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:24:25.925" endtime="20181217 17:24:29.942"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//input[@placeholder='Search']</arg>
+<arg>${s[0]}</arg>
+</arguments>
+<msg timestamp="20181217 17:24:29.942" level="INFO">Typing text 'ADC-PPLSFTAPP' into text field 'xpath=//input[@placeholder='Search']'.</msg>
+<status status="PASS" starttime="20181217 17:24:29.942" endtime="20181217 17:24:30.218"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:24:34.220" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:24:30.218" endtime="20181217 17:24:34.220"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//tr[@data-index='0']//a[@title='edit']</arg>
+</arguments>
+<msg timestamp="20181217 17:24:34.221" level="INFO">Clicking element 'xpath=//tr[@data-index='0']//a[@title='edit']'.</msg>
+<status status="PASS" starttime="20181217 17:24:34.220" endtime="20181217 17:24:34.338"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:24:38.355" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:24:34.339" endtime="20181217 17:24:38.355"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+</arguments>
+<assign>
+<var>${ospld}</var>
+</assign>
+<msg timestamp="20181217 17:24:38.409" level="INFO">${ospld} = </msg>
+<status status="PASS" starttime="20181217 17:24:38.355" endtime="20181217 17:24:38.409"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:24:38.409" endtime="20181217 17:24:38.409"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+<arg>${s[1]}</arg>
+</arguments>
+<msg timestamp="20181217 17:24:38.409" level="INFO">Typing text '2019/12/31' into text field 'xpath=//*[@name='osPlanned']'.</msg>
+<status status="PASS" starttime="20181217 17:24:38.409" endtime="20181217 17:24:38.848"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id='saveButton']</arg>
+</arguments>
+<msg timestamp="20181217 17:24:38.849" level="INFO">Clicking button 'xpath=//*[@id='saveButton']'.</msg>
+<status status="PASS" starttime="20181217 17:24:38.848" endtime="20181217 17:24:39.051"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:24:43.053" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:24:39.051" endtime="20181217 17:24:43.053"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@class='bootstrap-dialog-message']</arg>
+</arguments>
+<assign>
+<var>${msg}</var>
+</assign>
+<msg timestamp="20181217 17:24:43.112" level="INFO">${msg} = VM Saved</msg>
+<status status="PASS" starttime="20181217 17:24:43.053" endtime="20181217 17:24:43.112"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${msg}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:24:43.112" endtime="20181217 17:24:43.113"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:24:43.113" endtime="20181217 17:24:43.114"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${msg}'=='VM Saved'</arg>
+<arg>write csv</arg>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<kw name="Write Csv" library="readycsv">
+<arguments>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:24:43.115" endtime="20181217 17:24:43.116"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:24:43.114" endtime="20181217 17:24:43.116"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[text()='×']</arg>
+</arguments>
+<msg timestamp="20181217 17:24:43.117" level="INFO">Clicking button 'xpath=//*[text()='×']'.</msg>
+<status status="PASS" starttime="20181217 17:24:43.116" endtime="20181217 17:24:43.417"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:24:25.924" endtime="20181217 17:24:43.417"></status>
+</kw>
+<kw name="${s} = ('ADC-PPLSFTAPP2', '2019/12/31')" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s[0]}----${s[1]}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:24:43.418" endtime="20181217 17:24:43.419"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:24:47.420" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:24:43.419" endtime="20181217 17:24:47.420"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//input[@placeholder='Search']</arg>
+<arg>${s[0]}</arg>
+</arguments>
+<msg timestamp="20181217 17:24:47.421" level="INFO">Typing text 'ADC-PPLSFTAPP2' into text field 'xpath=//input[@placeholder='Search']'.</msg>
+<status status="PASS" starttime="20181217 17:24:47.421" endtime="20181217 17:24:47.740"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:24:51.741" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:24:47.741" endtime="20181217 17:24:51.741"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//tr[@data-index='0']//a[@title='edit']</arg>
+</arguments>
+<msg timestamp="20181217 17:24:51.742" level="INFO">Clicking element 'xpath=//tr[@data-index='0']//a[@title='edit']'.</msg>
+<status status="PASS" starttime="20181217 17:24:51.741" endtime="20181217 17:24:51.864"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:24:55.865" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:24:51.865" endtime="20181217 17:24:55.865"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+</arguments>
+<assign>
+<var>${ospld}</var>
+</assign>
+<msg timestamp="20181217 17:24:55.926" level="INFO">${ospld} = </msg>
+<status status="PASS" starttime="20181217 17:24:55.865" endtime="20181217 17:24:55.926"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:24:55.927" endtime="20181217 17:24:55.927"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+<arg>${s[1]}</arg>
+</arguments>
+<msg timestamp="20181217 17:24:55.928" level="INFO">Typing text '2019/12/31' into text field 'xpath=//*[@name='osPlanned']'.</msg>
+<status status="PASS" starttime="20181217 17:24:55.928" endtime="20181217 17:24:56.457"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id='saveButton']</arg>
+</arguments>
+<msg timestamp="20181217 17:24:56.458" level="INFO">Clicking button 'xpath=//*[@id='saveButton']'.</msg>
+<status status="PASS" starttime="20181217 17:24:56.458" endtime="20181217 17:24:56.644"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:25:00.646" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:24:56.645" endtime="20181217 17:25:00.646"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@class='bootstrap-dialog-message']</arg>
+</arguments>
+<assign>
+<var>${msg}</var>
+</assign>
+<msg timestamp="20181217 17:25:00.700" level="INFO">${msg} = VM Saved</msg>
+<status status="PASS" starttime="20181217 17:25:00.646" endtime="20181217 17:25:00.700"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${msg}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:25:00.701" endtime="20181217 17:25:00.701"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:25:00.702" endtime="20181217 17:25:00.702"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${msg}'=='VM Saved'</arg>
+<arg>write csv</arg>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<kw name="Write Csv" library="readycsv">
+<arguments>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:25:00.703" endtime="20181217 17:25:00.704"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:25:00.702" endtime="20181217 17:25:00.704"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[text()='×']</arg>
+</arguments>
+<msg timestamp="20181217 17:25:00.705" level="INFO">Clicking button 'xpath=//*[text()='×']'.</msg>
+<status status="PASS" starttime="20181217 17:25:00.705" endtime="20181217 17:25:01.030"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:24:43.418" endtime="20181217 17:25:01.030"></status>
+</kw>
+<kw name="${s} = ('ADC-PPLSFTAPP3', '2019/12/31')" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s[0]}----${s[1]}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:25:01.030" endtime="20181217 17:25:01.031"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:25:05.033" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:25:01.032" endtime="20181217 17:25:05.033"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//input[@placeholder='Search']</arg>
+<arg>${s[0]}</arg>
+</arguments>
+<msg timestamp="20181217 17:25:05.034" level="INFO">Typing text 'ADC-PPLSFTAPP3' into text field 'xpath=//input[@placeholder='Search']'.</msg>
+<status status="PASS" starttime="20181217 17:25:05.033" endtime="20181217 17:25:05.327"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:25:09.329" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:25:05.327" endtime="20181217 17:25:09.329"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//tr[@data-index='0']//a[@title='edit']</arg>
+</arguments>
+<msg timestamp="20181217 17:25:09.330" level="INFO">Clicking element 'xpath=//tr[@data-index='0']//a[@title='edit']'.</msg>
+<status status="PASS" starttime="20181217 17:25:09.329" endtime="20181217 17:25:09.464"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:25:13.464" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:25:09.464" endtime="20181217 17:25:13.464"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+</arguments>
+<assign>
+<var>${ospld}</var>
+</assign>
+<msg timestamp="20181217 17:25:13.534" level="INFO">${ospld} = </msg>
+<status status="PASS" starttime="20181217 17:25:13.464" endtime="20181217 17:25:13.534"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:25:13.535" endtime="20181217 17:25:13.535"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+<arg>${s[1]}</arg>
+</arguments>
+<msg timestamp="20181217 17:25:13.536" level="INFO">Typing text '2019/12/31' into text field 'xpath=//*[@name='osPlanned']'.</msg>
+<status status="PASS" starttime="20181217 17:25:13.536" endtime="20181217 17:25:13.949"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id='saveButton']</arg>
+</arguments>
+<msg timestamp="20181217 17:25:13.949" level="INFO">Clicking button 'xpath=//*[@id='saveButton']'.</msg>
+<status status="PASS" starttime="20181217 17:25:13.949" endtime="20181217 17:25:14.204"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:25:18.206" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:25:14.204" endtime="20181217 17:25:18.206"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@class='bootstrap-dialog-message']</arg>
+</arguments>
+<assign>
+<var>${msg}</var>
+</assign>
+<msg timestamp="20181217 17:25:18.275" level="INFO">${msg} = VM Saved</msg>
+<status status="PASS" starttime="20181217 17:25:18.206" endtime="20181217 17:25:18.275"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${msg}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:25:18.276" endtime="20181217 17:25:18.276"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:25:18.277" endtime="20181217 17:25:18.277"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${msg}'=='VM Saved'</arg>
+<arg>write csv</arg>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<kw name="Write Csv" library="readycsv">
+<arguments>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:25:18.278" endtime="20181217 17:25:18.279"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:25:18.277" endtime="20181217 17:25:18.279"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[text()='×']</arg>
+</arguments>
+<msg timestamp="20181217 17:25:18.280" level="INFO">Clicking button 'xpath=//*[text()='×']'.</msg>
+<status status="PASS" starttime="20181217 17:25:18.280" endtime="20181217 17:25:18.550"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:25:01.030" endtime="20181217 17:25:18.550"></status>
+</kw>
+<kw name="${s} = ('ADC-PPLSFTWEB2', '2019/12/31')" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s[0]}----${s[1]}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:25:18.551" endtime="20181217 17:25:18.552"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:25:22.554" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:25:18.552" endtime="20181217 17:25:22.554"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//input[@placeholder='Search']</arg>
+<arg>${s[0]}</arg>
+</arguments>
+<msg timestamp="20181217 17:25:22.555" level="INFO">Typing text 'ADC-PPLSFTWEB2' into text field 'xpath=//input[@placeholder='Search']'.</msg>
+<status status="PASS" starttime="20181217 17:25:22.554" endtime="20181217 17:25:22.853"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:25:26.854" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:25:22.854" endtime="20181217 17:25:26.854"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//tr[@data-index='0']//a[@title='edit']</arg>
+</arguments>
+<msg timestamp="20181217 17:25:26.855" level="INFO">Clicking element 'xpath=//tr[@data-index='0']//a[@title='edit']'.</msg>
+<status status="PASS" starttime="20181217 17:25:26.854" endtime="20181217 17:25:26.973"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:25:30.976" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:25:26.973" endtime="20181217 17:25:30.976"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+</arguments>
+<assign>
+<var>${ospld}</var>
+</assign>
+<msg timestamp="20181217 17:25:31.038" level="INFO">${ospld} = </msg>
+<status status="PASS" starttime="20181217 17:25:30.976" endtime="20181217 17:25:31.038"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:25:31.038" endtime="20181217 17:25:31.039"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+<arg>${s[1]}</arg>
+</arguments>
+<msg timestamp="20181217 17:25:31.040" level="INFO">Typing text '2019/12/31' into text field 'xpath=//*[@name='osPlanned']'.</msg>
+<status status="PASS" starttime="20181217 17:25:31.039" endtime="20181217 17:25:31.526"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id='saveButton']</arg>
+</arguments>
+<msg timestamp="20181217 17:25:31.526" level="INFO">Clicking button 'xpath=//*[@id='saveButton']'.</msg>
+<status status="PASS" starttime="20181217 17:25:31.526" endtime="20181217 17:25:31.733"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:25:35.734" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:25:31.733" endtime="20181217 17:25:35.734"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@class='bootstrap-dialog-message']</arg>
+</arguments>
+<assign>
+<var>${msg}</var>
+</assign>
+<msg timestamp="20181217 17:25:35.791" level="INFO">${msg} = VM Saved</msg>
+<status status="PASS" starttime="20181217 17:25:35.734" endtime="20181217 17:25:35.791"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${msg}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:25:35.791" endtime="20181217 17:25:35.792"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:25:35.792" endtime="20181217 17:25:35.793"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${msg}'=='VM Saved'</arg>
+<arg>write csv</arg>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<kw name="Write Csv" library="readycsv">
+<arguments>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:25:35.794" endtime="20181217 17:25:35.795"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:25:35.793" endtime="20181217 17:25:35.795"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[text()='×']</arg>
+</arguments>
+<msg timestamp="20181217 17:25:35.796" level="INFO">Clicking button 'xpath=//*[text()='×']'.</msg>
+<status status="PASS" starttime="20181217 17:25:35.795" endtime="20181217 17:25:36.020"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:25:18.550" endtime="20181217 17:25:36.020"></status>
+</kw>
+<kw name="${s} = ('ADC-PPLSFTWEB3', '2019/12/31')" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s[0]}----${s[1]}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:25:36.021" endtime="20181217 17:25:36.022"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:25:40.024" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:25:36.022" endtime="20181217 17:25:40.024"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//input[@placeholder='Search']</arg>
+<arg>${s[0]}</arg>
+</arguments>
+<msg timestamp="20181217 17:25:40.025" level="INFO">Typing text 'ADC-PPLSFTWEB3' into text field 'xpath=//input[@placeholder='Search']'.</msg>
+<status status="PASS" starttime="20181217 17:25:40.024" endtime="20181217 17:25:40.323"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:25:44.325" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:25:40.323" endtime="20181217 17:25:44.325"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//tr[@data-index='0']//a[@title='edit']</arg>
+</arguments>
+<msg timestamp="20181217 17:25:44.326" level="INFO">Clicking element 'xpath=//tr[@data-index='0']//a[@title='edit']'.</msg>
+<status status="PASS" starttime="20181217 17:25:44.325" endtime="20181217 17:25:44.535"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:25:48.537" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:25:44.535" endtime="20181217 17:25:48.537"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+</arguments>
+<assign>
+<var>${ospld}</var>
+</assign>
+<msg timestamp="20181217 17:25:48.592" level="INFO">${ospld} = </msg>
+<status status="PASS" starttime="20181217 17:25:48.537" endtime="20181217 17:25:48.592"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:25:48.593" endtime="20181217 17:25:48.593"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+<arg>${s[1]}</arg>
+</arguments>
+<msg timestamp="20181217 17:25:48.594" level="INFO">Typing text '2019/12/31' into text field 'xpath=//*[@name='osPlanned']'.</msg>
+<status status="PASS" starttime="20181217 17:25:48.594" endtime="20181217 17:25:49.019"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id='saveButton']</arg>
+</arguments>
+<msg timestamp="20181217 17:25:49.020" level="INFO">Clicking button 'xpath=//*[@id='saveButton']'.</msg>
+<status status="PASS" starttime="20181217 17:25:49.020" endtime="20181217 17:25:49.231"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:25:53.232" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:25:49.232" endtime="20181217 17:25:53.232"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@class='bootstrap-dialog-message']</arg>
+</arguments>
+<assign>
+<var>${msg}</var>
+</assign>
+<msg timestamp="20181217 17:25:53.291" level="INFO">${msg} = VM Saved</msg>
+<status status="PASS" starttime="20181217 17:25:53.232" endtime="20181217 17:25:53.291"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${msg}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:25:53.292" endtime="20181217 17:25:53.292"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:25:53.293" endtime="20181217 17:25:53.293"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${msg}'=='VM Saved'</arg>
+<arg>write csv</arg>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<kw name="Write Csv" library="readycsv">
+<arguments>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:25:53.294" endtime="20181217 17:25:53.295"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:25:53.294" endtime="20181217 17:25:53.296"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[text()='×']</arg>
+</arguments>
+<msg timestamp="20181217 17:25:53.296" level="INFO">Clicking button 'xpath=//*[text()='×']'.</msg>
+<status status="PASS" starttime="20181217 17:25:53.296" endtime="20181217 17:25:53.564"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:25:36.020" endtime="20181217 17:25:53.564"></status>
+</kw>
+<kw name="${s} = ('ADC-RDS-MMEA', '2019/6/30')" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s[0]}----${s[1]}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:25:53.564" endtime="20181217 17:25:53.565"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:25:57.567" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:25:53.565" endtime="20181217 17:25:57.567"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//input[@placeholder='Search']</arg>
+<arg>${s[0]}</arg>
+</arguments>
+<msg timestamp="20181217 17:25:57.568" level="INFO">Typing text 'ADC-RDS-MMEA' into text field 'xpath=//input[@placeholder='Search']'.</msg>
+<status status="PASS" starttime="20181217 17:25:57.567" endtime="20181217 17:25:57.819"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:26:01.821" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:25:57.820" endtime="20181217 17:26:01.821"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//tr[@data-index='0']//a[@title='edit']</arg>
+</arguments>
+<msg timestamp="20181217 17:26:01.822" level="INFO">Clicking element 'xpath=//tr[@data-index='0']//a[@title='edit']'.</msg>
+<status status="PASS" starttime="20181217 17:26:01.821" endtime="20181217 17:26:01.939"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:26:05.941" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:26:01.940" endtime="20181217 17:26:05.941"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+</arguments>
+<assign>
+<var>${ospld}</var>
+</assign>
+<msg timestamp="20181217 17:26:06.000" level="INFO">${ospld} = </msg>
+<status status="PASS" starttime="20181217 17:26:05.941" endtime="20181217 17:26:06.001"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:26:06.001" endtime="20181217 17:26:06.002"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+<arg>${s[1]}</arg>
+</arguments>
+<msg timestamp="20181217 17:26:06.002" level="INFO">Typing text '2019/6/30' into text field 'xpath=//*[@name='osPlanned']'.</msg>
+<status status="PASS" starttime="20181217 17:26:06.002" endtime="20181217 17:26:06.416"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id='saveButton']</arg>
+</arguments>
+<msg timestamp="20181217 17:26:06.417" level="INFO">Clicking button 'xpath=//*[@id='saveButton']'.</msg>
+<status status="PASS" starttime="20181217 17:26:06.416" endtime="20181217 17:26:06.618"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:26:10.618" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:26:06.618" endtime="20181217 17:26:10.618"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@class='bootstrap-dialog-message']</arg>
+</arguments>
+<assign>
+<var>${msg}</var>
+</assign>
+<msg timestamp="20181217 17:26:10.676" level="INFO">${msg} = VM Saved</msg>
+<status status="PASS" starttime="20181217 17:26:10.618" endtime="20181217 17:26:10.676"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${msg}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:26:10.676" endtime="20181217 17:26:10.677"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:26:10.677" endtime="20181217 17:26:10.678"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${msg}'=='VM Saved'</arg>
+<arg>write csv</arg>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<kw name="Write Csv" library="readycsv">
+<arguments>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:26:10.679" endtime="20181217 17:26:10.680"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:26:10.678" endtime="20181217 17:26:10.680"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[text()='×']</arg>
+</arguments>
+<msg timestamp="20181217 17:26:10.681" level="INFO">Clicking button 'xpath=//*[text()='×']'.</msg>
+<status status="PASS" starttime="20181217 17:26:10.680" endtime="20181217 17:26:10.932"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:25:53.564" endtime="20181217 17:26:10.933"></status>
+</kw>
+<kw name="${s} = ('ADC-RDS-NAV-AU3', '2019/6/30')" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s[0]}----${s[1]}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:26:10.933" endtime="20181217 17:26:10.934"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:26:14.936" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:26:10.935" endtime="20181217 17:26:14.936"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//input[@placeholder='Search']</arg>
+<arg>${s[0]}</arg>
+</arguments>
+<msg timestamp="20181217 17:26:14.937" level="INFO">Typing text 'ADC-RDS-NAV-AU3' into text field 'xpath=//input[@placeholder='Search']'.</msg>
+<status status="PASS" starttime="20181217 17:26:14.936" endtime="20181217 17:26:15.216"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:26:19.216" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:26:15.216" endtime="20181217 17:26:19.216"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//tr[@data-index='0']//a[@title='edit']</arg>
+</arguments>
+<msg timestamp="20181217 17:26:19.217" level="INFO">Clicking element 'xpath=//tr[@data-index='0']//a[@title='edit']'.</msg>
+<status status="PASS" starttime="20181217 17:26:19.216" endtime="20181217 17:26:19.334"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:26:23.337" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:26:19.334" endtime="20181217 17:26:23.337"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+</arguments>
+<assign>
+<var>${ospld}</var>
+</assign>
+<msg timestamp="20181217 17:26:23.394" level="INFO">${ospld} = </msg>
+<status status="PASS" starttime="20181217 17:26:23.337" endtime="20181217 17:26:23.394"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:26:23.394" endtime="20181217 17:26:23.395"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+<arg>${s[1]}</arg>
+</arguments>
+<msg timestamp="20181217 17:26:23.396" level="INFO">Typing text '2019/6/30' into text field 'xpath=//*[@name='osPlanned']'.</msg>
+<status status="PASS" starttime="20181217 17:26:23.395" endtime="20181217 17:26:23.792"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id='saveButton']</arg>
+</arguments>
+<msg timestamp="20181217 17:26:23.793" level="INFO">Clicking button 'xpath=//*[@id='saveButton']'.</msg>
+<status status="PASS" starttime="20181217 17:26:23.792" endtime="20181217 17:26:24.005"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:26:28.007" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:26:24.005" endtime="20181217 17:26:28.007"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@class='bootstrap-dialog-message']</arg>
+</arguments>
+<assign>
+<var>${msg}</var>
+</assign>
+<msg timestamp="20181217 17:26:28.065" level="INFO">${msg} = VM Saved</msg>
+<status status="PASS" starttime="20181217 17:26:28.007" endtime="20181217 17:26:28.066"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${msg}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:26:28.066" endtime="20181217 17:26:28.066"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:26:28.067" endtime="20181217 17:26:28.067"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${msg}'=='VM Saved'</arg>
+<arg>write csv</arg>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<kw name="Write Csv" library="readycsv">
+<arguments>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:26:28.068" endtime="20181217 17:26:28.069"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:26:28.068" endtime="20181217 17:26:28.070"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[text()='×']</arg>
+</arguments>
+<msg timestamp="20181217 17:26:28.070" level="INFO">Clicking button 'xpath=//*[text()='×']'.</msg>
+<status status="PASS" starttime="20181217 17:26:28.070" endtime="20181217 17:26:28.341"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:26:10.933" endtime="20181217 17:26:28.341"></status>
+</kw>
+<kw name="${s} = ('ADC-RDS-NAV-KR1', '2019/6/30')" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s[0]}----${s[1]}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:26:28.342" endtime="20181217 17:26:28.343"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:26:32.344" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:26:28.343" endtime="20181217 17:26:32.344"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//input[@placeholder='Search']</arg>
+<arg>${s[0]}</arg>
+</arguments>
+<msg timestamp="20181217 17:26:32.345" level="INFO">Typing text 'ADC-RDS-NAV-KR1' into text field 'xpath=//input[@placeholder='Search']'.</msg>
+<status status="PASS" starttime="20181217 17:26:32.344" endtime="20181217 17:26:32.637"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:26:36.638" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:26:32.638" endtime="20181217 17:26:36.638"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//tr[@data-index='0']//a[@title='edit']</arg>
+</arguments>
+<msg timestamp="20181217 17:26:36.639" level="INFO">Clicking element 'xpath=//tr[@data-index='0']//a[@title='edit']'.</msg>
+<status status="PASS" starttime="20181217 17:26:36.638" endtime="20181217 17:26:36.752"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:26:40.754" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:26:36.753" endtime="20181217 17:26:40.754"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+</arguments>
+<assign>
+<var>${ospld}</var>
+</assign>
+<msg timestamp="20181217 17:26:40.815" level="INFO">${ospld} = </msg>
+<status status="PASS" starttime="20181217 17:26:40.754" endtime="20181217 17:26:40.815"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:26:40.815" endtime="20181217 17:26:40.816"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+<arg>${s[1]}</arg>
+</arguments>
+<msg timestamp="20181217 17:26:40.817" level="INFO">Typing text '2019/6/30' into text field 'xpath=//*[@name='osPlanned']'.</msg>
+<status status="PASS" starttime="20181217 17:26:40.816" endtime="20181217 17:26:41.179"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id='saveButton']</arg>
+</arguments>
+<msg timestamp="20181217 17:26:41.180" level="INFO">Clicking button 'xpath=//*[@id='saveButton']'.</msg>
+<status status="PASS" starttime="20181217 17:26:41.179" endtime="20181217 17:26:41.411"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:26:45.411" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:26:41.411" endtime="20181217 17:26:45.411"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@class='bootstrap-dialog-message']</arg>
+</arguments>
+<assign>
+<var>${msg}</var>
+</assign>
+<msg timestamp="20181217 17:26:45.467" level="INFO">${msg} = VM Saved</msg>
+<status status="PASS" starttime="20181217 17:26:45.411" endtime="20181217 17:26:45.467"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${msg}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:26:45.467" endtime="20181217 17:26:45.468"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:26:45.468" endtime="20181217 17:26:45.469"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${msg}'=='VM Saved'</arg>
+<arg>write csv</arg>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<kw name="Write Csv" library="readycsv">
+<arguments>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:26:45.470" endtime="20181217 17:26:45.471"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:26:45.469" endtime="20181217 17:26:45.471"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[text()='×']</arg>
+</arguments>
+<msg timestamp="20181217 17:26:45.472" level="INFO">Clicking button 'xpath=//*[text()='×']'.</msg>
+<status status="PASS" starttime="20181217 17:26:45.471" endtime="20181217 17:26:45.740"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:26:28.342" endtime="20181217 17:26:45.740"></status>
+</kw>
+<kw name="${s} = ('ADC-RDS-NAV-KR2', '2019/6/30')" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s[0]}----${s[1]}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:26:45.741" endtime="20181217 17:26:45.743"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:26:49.743" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:26:45.743" endtime="20181217 17:26:49.744"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//input[@placeholder='Search']</arg>
+<arg>${s[0]}</arg>
+</arguments>
+<msg timestamp="20181217 17:26:49.745" level="INFO">Typing text 'ADC-RDS-NAV-KR2' into text field 'xpath=//input[@placeholder='Search']'.</msg>
+<status status="PASS" starttime="20181217 17:26:49.744" endtime="20181217 17:26:50.029"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:26:54.030" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:26:50.030" endtime="20181217 17:26:54.030"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//tr[@data-index='0']//a[@title='edit']</arg>
+</arguments>
+<msg timestamp="20181217 17:26:54.031" level="INFO">Clicking element 'xpath=//tr[@data-index='0']//a[@title='edit']'.</msg>
+<status status="PASS" starttime="20181217 17:26:54.030" endtime="20181217 17:26:54.271"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:26:58.273" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:26:54.271" endtime="20181217 17:26:58.273"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+</arguments>
+<assign>
+<var>${ospld}</var>
+</assign>
+<msg timestamp="20181217 17:26:58.332" level="INFO">${ospld} = </msg>
+<status status="PASS" starttime="20181217 17:26:58.273" endtime="20181217 17:26:58.332"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:26:58.332" endtime="20181217 17:26:58.333"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+<arg>${s[1]}</arg>
+</arguments>
+<msg timestamp="20181217 17:26:58.334" level="INFO">Typing text '2019/6/30' into text field 'xpath=//*[@name='osPlanned']'.</msg>
+<status status="PASS" starttime="20181217 17:26:58.333" endtime="20181217 17:26:58.756"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id='saveButton']</arg>
+</arguments>
+<msg timestamp="20181217 17:26:58.757" level="INFO">Clicking button 'xpath=//*[@id='saveButton']'.</msg>
+<status status="PASS" starttime="20181217 17:26:58.757" endtime="20181217 17:26:58.965"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:27:02.966" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:26:58.965" endtime="20181217 17:27:02.966"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@class='bootstrap-dialog-message']</arg>
+</arguments>
+<assign>
+<var>${msg}</var>
+</assign>
+<msg timestamp="20181217 17:27:03.025" level="INFO">${msg} = VM Saved</msg>
+<status status="PASS" starttime="20181217 17:27:02.966" endtime="20181217 17:27:03.025"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${msg}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:27:03.025" endtime="20181217 17:27:03.026"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:27:03.026" endtime="20181217 17:27:03.027"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${msg}'=='VM Saved'</arg>
+<arg>write csv</arg>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<kw name="Write Csv" library="readycsv">
+<arguments>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:27:03.028" endtime="20181217 17:27:03.029"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:27:03.027" endtime="20181217 17:27:03.029"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[text()='×']</arg>
+</arguments>
+<msg timestamp="20181217 17:27:03.030" level="INFO">Clicking button 'xpath=//*[text()='×']'.</msg>
+<status status="PASS" starttime="20181217 17:27:03.029" endtime="20181217 17:27:03.441"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:26:45.740" endtime="20181217 17:27:03.441"></status>
+</kw>
+<kw name="${s} = ('ADC-RDS-NAV-TW1', '2019/6/30')" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s[0]}----${s[1]}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:27:03.441" endtime="20181217 17:27:03.443"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:27:07.443" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:27:03.443" endtime="20181217 17:27:07.443"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//input[@placeholder='Search']</arg>
+<arg>${s[0]}</arg>
+</arguments>
+<msg timestamp="20181217 17:27:07.444" level="INFO">Typing text 'ADC-RDS-NAV-TW1' into text field 'xpath=//input[@placeholder='Search']'.</msg>
+<status status="PASS" starttime="20181217 17:27:07.443" endtime="20181217 17:27:07.867"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:27:11.870" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:27:07.868" endtime="20181217 17:27:11.870"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//tr[@data-index='0']//a[@title='edit']</arg>
+</arguments>
+<msg timestamp="20181217 17:27:11.871" level="INFO">Clicking element 'xpath=//tr[@data-index='0']//a[@title='edit']'.</msg>
+<status status="PASS" starttime="20181217 17:27:11.870" endtime="20181217 17:27:12.001"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:27:16.004" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:27:12.001" endtime="20181217 17:27:16.004"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+</arguments>
+<assign>
+<var>${ospld}</var>
+</assign>
+<msg timestamp="20181217 17:27:16.059" level="INFO">${ospld} = </msg>
+<status status="PASS" starttime="20181217 17:27:16.004" endtime="20181217 17:27:16.059"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:27:16.059" endtime="20181217 17:27:16.060"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+<arg>${s[1]}</arg>
+</arguments>
+<msg timestamp="20181217 17:27:16.061" level="INFO">Typing text '2019/6/30' into text field 'xpath=//*[@name='osPlanned']'.</msg>
+<status status="PASS" starttime="20181217 17:27:16.060" endtime="20181217 17:27:16.464"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id='saveButton']</arg>
+</arguments>
+<msg timestamp="20181217 17:27:16.465" level="INFO">Clicking button 'xpath=//*[@id='saveButton']'.</msg>
+<status status="PASS" starttime="20181217 17:27:16.464" endtime="20181217 17:27:16.670"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:27:20.671" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:27:16.670" endtime="20181217 17:27:20.671"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@class='bootstrap-dialog-message']</arg>
+</arguments>
+<assign>
+<var>${msg}</var>
+</assign>
+<msg timestamp="20181217 17:27:20.732" level="INFO">${msg} = VM Saved</msg>
+<status status="PASS" starttime="20181217 17:27:20.671" endtime="20181217 17:27:20.732"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${msg}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:27:20.732" endtime="20181217 17:27:20.733"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:27:20.733" endtime="20181217 17:27:20.734"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${msg}'=='VM Saved'</arg>
+<arg>write csv</arg>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<kw name="Write Csv" library="readycsv">
+<arguments>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:27:20.735" endtime="20181217 17:27:20.736"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:27:20.734" endtime="20181217 17:27:20.736"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[text()='×']</arg>
+</arguments>
+<msg timestamp="20181217 17:27:20.737" level="INFO">Clicking button 'xpath=//*[text()='×']'.</msg>
+<status status="PASS" starttime="20181217 17:27:20.736" endtime="20181217 17:27:20.958"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:27:03.441" endtime="20181217 17:27:20.958"></status>
+</kw>
+<kw name="${s} = ('ADC-RDS-NAV-TW2', '2019/6/30')" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s[0]}----${s[1]}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:27:20.958" endtime="20181217 17:27:20.959"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:27:24.962" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:27:20.960" endtime="20181217 17:27:24.962"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//input[@placeholder='Search']</arg>
+<arg>${s[0]}</arg>
+</arguments>
+<msg timestamp="20181217 17:27:24.963" level="INFO">Typing text 'ADC-RDS-NAV-TW2' into text field 'xpath=//input[@placeholder='Search']'.</msg>
+<status status="PASS" starttime="20181217 17:27:24.962" endtime="20181217 17:27:25.252"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:27:29.253" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:27:25.252" endtime="20181217 17:27:29.253"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//tr[@data-index='0']//a[@title='edit']</arg>
+</arguments>
+<msg timestamp="20181217 17:27:29.254" level="INFO">Clicking element 'xpath=//tr[@data-index='0']//a[@title='edit']'.</msg>
+<status status="PASS" starttime="20181217 17:27:29.253" endtime="20181217 17:27:29.421"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:27:33.423" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:27:29.422" endtime="20181217 17:27:33.423"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+</arguments>
+<assign>
+<var>${ospld}</var>
+</assign>
+<msg timestamp="20181217 17:27:33.483" level="INFO">${ospld} = </msg>
+<status status="PASS" starttime="20181217 17:27:33.423" endtime="20181217 17:27:33.484"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:27:33.484" endtime="20181217 17:27:33.485"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+<arg>${s[1]}</arg>
+</arguments>
+<msg timestamp="20181217 17:27:33.486" level="INFO">Typing text '2019/6/30' into text field 'xpath=//*[@name='osPlanned']'.</msg>
+<status status="PASS" starttime="20181217 17:27:33.485" endtime="20181217 17:27:33.902"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id='saveButton']</arg>
+</arguments>
+<msg timestamp="20181217 17:27:33.903" level="INFO">Clicking button 'xpath=//*[@id='saveButton']'.</msg>
+<status status="PASS" starttime="20181217 17:27:33.902" endtime="20181217 17:27:34.123"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:27:38.125" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:27:34.124" endtime="20181217 17:27:38.125"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@class='bootstrap-dialog-message']</arg>
+</arguments>
+<assign>
+<var>${msg}</var>
+</assign>
+<msg timestamp="20181217 17:27:38.182" level="INFO">${msg} = VM Saved</msg>
+<status status="PASS" starttime="20181217 17:27:38.125" endtime="20181217 17:27:38.182"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${msg}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:27:38.182" endtime="20181217 17:27:38.183"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:27:38.183" endtime="20181217 17:27:38.184"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${msg}'=='VM Saved'</arg>
+<arg>write csv</arg>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<kw name="Write Csv" library="readycsv">
+<arguments>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:27:38.185" endtime="20181217 17:27:38.186"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:27:38.184" endtime="20181217 17:27:38.186"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[text()='×']</arg>
+</arguments>
+<msg timestamp="20181217 17:27:38.187" level="INFO">Clicking button 'xpath=//*[text()='×']'.</msg>
+<status status="PASS" starttime="20181217 17:27:38.186" endtime="20181217 17:27:38.452"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:27:20.958" endtime="20181217 17:27:38.452"></status>
+</kw>
+<kw name="${s} = ('ADC-RDS-NAV-TW4', '2019/6/30')" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s[0]}----${s[1]}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:27:38.452" endtime="20181217 17:27:38.453"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:27:42.455" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:27:38.453" endtime="20181217 17:27:42.455"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//input[@placeholder='Search']</arg>
+<arg>${s[0]}</arg>
+</arguments>
+<msg timestamp="20181217 17:27:42.456" level="INFO">Typing text 'ADC-RDS-NAV-TW4' into text field 'xpath=//input[@placeholder='Search']'.</msg>
+<status status="PASS" starttime="20181217 17:27:42.455" endtime="20181217 17:27:42.755"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:27:46.757" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:27:42.756" endtime="20181217 17:27:46.757"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//tr[@data-index='0']//a[@title='edit']</arg>
+</arguments>
+<msg timestamp="20181217 17:27:46.758" level="INFO">Clicking element 'xpath=//tr[@data-index='0']//a[@title='edit']'.</msg>
+<status status="PASS" starttime="20181217 17:27:46.757" endtime="20181217 17:27:46.881"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:27:50.884" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:27:46.881" endtime="20181217 17:27:50.884"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+</arguments>
+<assign>
+<var>${ospld}</var>
+</assign>
+<msg timestamp="20181217 17:27:50.938" level="INFO">${ospld} = </msg>
+<status status="PASS" starttime="20181217 17:27:50.884" endtime="20181217 17:27:50.938"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:27:50.938" endtime="20181217 17:27:50.939"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+<arg>${s[1]}</arg>
+</arguments>
+<msg timestamp="20181217 17:27:50.940" level="INFO">Typing text '2019/6/30' into text field 'xpath=//*[@name='osPlanned']'.</msg>
+<status status="PASS" starttime="20181217 17:27:50.939" endtime="20181217 17:27:51.321"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id='saveButton']</arg>
+</arguments>
+<msg timestamp="20181217 17:27:51.323" level="INFO">Clicking button 'xpath=//*[@id='saveButton']'.</msg>
+<status status="PASS" starttime="20181217 17:27:51.322" endtime="20181217 17:27:51.530"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:27:55.532" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:27:51.531" endtime="20181217 17:27:55.532"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@class='bootstrap-dialog-message']</arg>
+</arguments>
+<assign>
+<var>${msg}</var>
+</assign>
+<msg timestamp="20181217 17:27:55.592" level="INFO">${msg} = VM Saved</msg>
+<status status="PASS" starttime="20181217 17:27:55.532" endtime="20181217 17:27:55.592"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${msg}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:27:55.592" endtime="20181217 17:27:55.593"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:27:55.593" endtime="20181217 17:27:55.594"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${msg}'=='VM Saved'</arg>
+<arg>write csv</arg>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<kw name="Write Csv" library="readycsv">
+<arguments>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:27:55.595" endtime="20181217 17:27:55.596"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:27:55.594" endtime="20181217 17:27:55.596"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[text()='×']</arg>
+</arguments>
+<msg timestamp="20181217 17:27:55.596" level="INFO">Clicking button 'xpath=//*[text()='×']'.</msg>
+<status status="PASS" starttime="20181217 17:27:55.596" endtime="20181217 17:27:55.846"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:27:38.452" endtime="20181217 17:27:55.847"></status>
+</kw>
+<kw name="${s} = ('ADC-RDS-NAV-TWS', '2019/6/30')" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s[0]}----${s[1]}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:27:55.847" endtime="20181217 17:27:55.848"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:27:59.850" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:27:55.848" endtime="20181217 17:27:59.850"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//input[@placeholder='Search']</arg>
+<arg>${s[0]}</arg>
+</arguments>
+<msg timestamp="20181217 17:27:59.851" level="INFO">Typing text 'ADC-RDS-NAV-TWS' into text field 'xpath=//input[@placeholder='Search']'.</msg>
+<status status="PASS" starttime="20181217 17:27:59.850" endtime="20181217 17:28:00.180"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:28:04.181" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:28:00.181" endtime="20181217 17:28:04.181"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//tr[@data-index='0']//a[@title='edit']</arg>
+</arguments>
+<msg timestamp="20181217 17:28:04.182" level="INFO">Clicking element 'xpath=//tr[@data-index='0']//a[@title='edit']'.</msg>
+<status status="PASS" starttime="20181217 17:28:04.181" endtime="20181217 17:28:04.438"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:28:08.440" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:28:04.438" endtime="20181217 17:28:08.440"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+</arguments>
+<assign>
+<var>${ospld}</var>
+</assign>
+<msg timestamp="20181217 17:28:08.494" level="INFO">${ospld} = </msg>
+<status status="PASS" starttime="20181217 17:28:08.440" endtime="20181217 17:28:08.495"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:28:08.495" endtime="20181217 17:28:08.496"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+<arg>${s[1]}</arg>
+</arguments>
+<msg timestamp="20181217 17:28:08.497" level="INFO">Typing text '2019/6/30' into text field 'xpath=//*[@name='osPlanned']'.</msg>
+<status status="PASS" starttime="20181217 17:28:08.496" endtime="20181217 17:28:08.869"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id='saveButton']</arg>
+</arguments>
+<msg timestamp="20181217 17:28:08.870" level="INFO">Clicking button 'xpath=//*[@id='saveButton']'.</msg>
+<status status="PASS" starttime="20181217 17:28:08.870" endtime="20181217 17:28:09.058"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:28:13.070" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:28:09.058" endtime="20181217 17:28:13.070"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@class='bootstrap-dialog-message']</arg>
+</arguments>
+<assign>
+<var>${msg}</var>
+</assign>
+<msg timestamp="20181217 17:28:13.131" level="INFO">${msg} = VM Saved</msg>
+<status status="PASS" starttime="20181217 17:28:13.071" endtime="20181217 17:28:13.131"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${msg}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:28:13.131" endtime="20181217 17:28:13.132"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:28:13.132" endtime="20181217 17:28:13.133"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${msg}'=='VM Saved'</arg>
+<arg>write csv</arg>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<kw name="Write Csv" library="readycsv">
+<arguments>
+<arg>${s}</arg>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:28:13.134" endtime="20181217 17:28:13.135"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:28:13.133" endtime="20181217 17:28:13.135"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[text()='×']</arg>
+</arguments>
+<msg timestamp="20181217 17:28:13.136" level="INFO">Clicking button 'xpath=//*[text()='×']'.</msg>
+<status status="PASS" starttime="20181217 17:28:13.135" endtime="20181217 17:28:13.413"></status>
+</kw>
+<status status="PASS" starttime="20181217 17:27:55.847" endtime="20181217 17:28:13.413"></status>
+</kw>
+<kw name="${s} = ('ADC-VMGCCUDB', '2019/12/31')" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${s[0]}----${s[1]}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:28:13.413" endtime="20181217 17:28:13.414"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:28:17.416" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:28:13.415" endtime="20181217 17:28:17.416"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//input[@placeholder='Search']</arg>
+<arg>${s[0]}</arg>
+</arguments>
+<msg timestamp="20181217 17:28:17.417" level="INFO">Typing text 'ADC-VMGCCUDB' into text field 'xpath=//input[@placeholder='Search']'.</msg>
+<status status="PASS" starttime="20181217 17:28:17.416" endtime="20181217 17:28:17.692"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:28:21.694" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:28:17.693" endtime="20181217 17:28:21.694"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//tr[@data-index='0']//a[@title='edit']</arg>
+</arguments>
+<msg timestamp="20181217 17:28:21.695" level="INFO">Clicking element 'xpath=//tr[@data-index='0']//a[@title='edit']'.</msg>
+<status status="PASS" starttime="20181217 17:28:21.695" endtime="20181217 17:28:21.823"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20181217 17:28:25.825" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20181217 17:28:21.823" endtime="20181217 17:28:25.825"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+</arguments>
+<assign>
+<var>${ospld}</var>
+</assign>
+<msg timestamp="20181217 17:28:25.861" level="INFO">${ospld} = </msg>
+<status status="PASS" starttime="20181217 17:28:25.825" endtime="20181217 17:28:25.861"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${ospld}</arg>
+</arguments>
+<status status="PASS" starttime="20181217 17:28:25.862" endtime="20181217 17:28:25.862"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@name='osPlanned']</arg>
+<arg>${s[1]}</arg>
+</arguments>
+<msg timestamp="20181217 17:28:25.863" level="INFO">Typing text '2019/12/31' into text field 'xpath=//*[@name='osPlanned']'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20181217 17:28:27.157" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-39.png"&gt;&lt;img src="selenium-screenshot-39.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20181217 17:28:25.898" endtime="20181217 17:28:27.157"></status>
+</kw>
+<msg timestamp="20181217 17:28:27.172" level="FAIL">ElementNotVisibleException: Message: element not interactable
+  (Session info: chrome=70.0.3538.110)
+  (Driver info: chromedriver=2.44.609538 (b655c5a60b0b544917107a59d4153d4bf78e1b90),platform=Windows NT 6.3.9600 x86_64)
+</msg>
+<status status="FAIL" starttime="20181217 17:28:25.863" endtime="20181217 17:28:27.172"></status>
+</kw>
+<status status="FAIL" starttime="20181217 17:28:13.413" endtime="20181217 17:28:27.172"></status>
+</kw>
+<status status="FAIL" starttime="20181217 17:21:49.142" endtime="20181217 17:28:27.172"></status>
+</kw>
+<status status="FAIL" starttime="20181217 17:21:30.550" endtime="20181217 17:28:27.173"></status>
+</kw>
+<status status="FAIL" starttime="20181217 17:21:30.548" endtime="20181217 17:28:27.173" critical="yes">ElementNotVisibleException: Message: element not interactable
+  (Session info: chrome=70.0.3538.110)
+  (Driver info: chromedriver=2.44.609538 (b655c5a60b0b544917107a59d4153d4bf78e1b90),platform=Windows NT 6.3.9600 x86_64)
+</status>
+</test>
+<status status="FAIL" starttime="20181217 17:21:29.885" endtime="20181217 17:28:27.176"></status>
+</suite>
+<status status="FAIL" starttime="20181217 17:21:29.832" endtime="20181217 17:28:27.185"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="autoTest">autoTest</stat>
+<stat pass="0" fail="1" id="s1-s1" name="OSP-addFieldPAD">autoTest.OSP-addFieldPAD</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
